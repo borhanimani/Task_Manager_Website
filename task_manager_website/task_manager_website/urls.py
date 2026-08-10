@@ -15,10 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from home.views import HomeView
+from django.contrib.auth import auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
+    path('tasks/', include('task.urls'), name='task_list'),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]
+
+try:
+    from . import github_settings
+    social_login = 'authentication/login.html'
+    urlpatterns.insert(0,
+                       path('accounts/login/', auth_views.LoginView.as_view(template_name=social_login))
+                       )
+    print('Using', social_login, 'as the login template')
+except:
+    print('Using registration/login.html as the login template')
