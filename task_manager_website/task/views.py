@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views import View
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
-@login_required
-class TaskView(View):
+class TaskView( LoginRequiredMixin, View):
+    
     def get(self, request):
         return render(request, 'task/task_list.html')
