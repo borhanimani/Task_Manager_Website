@@ -21,7 +21,10 @@ from home.views import HomeView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
+
     path('tasks/', include('task.urls'), name='task_list'),
     path('api/tasks/', include('task.api.urls'), name='api_task_list'),
-    path('accounts/', include('django.contrib.auth.urls'))
+    
+    path('accounts/', include('django.contrib.auth.urls'), name='account'),
+    path('api/accounts/', include('account.api.urls'), name='api_account'),
 ]
