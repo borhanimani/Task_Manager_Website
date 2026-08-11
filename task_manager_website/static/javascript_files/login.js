@@ -45,7 +45,7 @@ document
                     );
                 }
 
-                window.location.href = "/Tasks/";
+                window.location.href = "/tasks/";
             }
 
             catch (error) {
