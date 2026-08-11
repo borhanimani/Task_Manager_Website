@@ -39,8 +39,7 @@ function showUser(user) {
             aria-expanded="false">
 
         ${firstLetter}
-        </button>
-
+        </button>ّ
         <ul class="dropdown-menu dropdown-menu-end">
             <li>
                 <button
@@ -58,9 +57,7 @@ function showLogin() {
     const area = document.getElementById("authArea");
 
     area.innerHTML = `
-    <a 
-    href="/login/"
-    class="btn btn-primary login-btn">
+    <a href="accounts/login/" class="btn btn-primary login-btn">
         Login
     </a>`;
 }
