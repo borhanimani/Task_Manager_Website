@@ -36,10 +36,7 @@ function showUser(user) {
         <button
             class="user-avatar"
             data-bs-toggle="dropdown"
-            aria-expanded="false">
-
-        ${firstLetter}
-        </button>ّ
+            aria-expanded="false"> ${firstLetter} </button>
         <ul class="dropdown-menu dropdown-menu-end">
             <li>
                 <button
@@ -48,8 +45,7 @@ function showUser(user) {
                     Logout
                 </button>
             </li>
-        </ul>
-    </div>`;
+        </ul></div>`;
 }
 
 
