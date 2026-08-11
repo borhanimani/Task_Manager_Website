@@ -29,7 +29,7 @@ async function loadTasks() {
     }
 
     if (myTasks.checked) {
-        url += "mine=true";
+        url += "onlyme=true";
     }
 
     const response = await fetch(url);
