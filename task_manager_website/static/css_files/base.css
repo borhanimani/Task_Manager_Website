@@ -9,6 +9,10 @@ body {
     background: #fafafa;
 }
 
+.site-header{
+    padding-top: 60px;
+}
+
 .brand-area {
     display: flex;
     align-items: center;

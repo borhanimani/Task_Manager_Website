@@ -47,13 +47,7 @@ function renderTasks(tasks) {
 
     empty.classList.add("d-none");
     tasks.forEach(task => {
-        // console.log(task);
-        console.log(currentUser);
-        console.log(task.created_by);
-
         const canEdit = currentUser.username === task.created_by.username ? true : false
-        console.log("can? " + canEdit);
-
         const updated = task.updated_at !== task.created_at;
         const card = document.createElement("article");
         card.className = `task-card ${task.status ? "done" : ""}`;
