@@ -24,5 +24,46 @@ class TaskListAPIView(APIView):
 
         serializer = TaskSerializer(tasks, many=True)
         return Response(serializer.data)
-    
-    
+
+    def post(self, request):
+        serializer = TaskSerializer(data=request.data)
+
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=201)
+
+        return Response(serializer.errors, status=400)
+
+
+class TaskDetailAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self, pk):
+        return Task.objects.get(id=pk)
+
+    def get(self, request, pk):
+        task = self.get_object(pk)
+        serializer = TaskSerializer(task)
+        return Response(serializer.data)
+
+    def patch (self, request, pk):
+        task = self.get_object(pk)
+
+        if task.user != request.user:
+            return Response({"error": "Not Allowed"}, status=403)
+
+        serializer = TaskSerializer(task, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+
+        return Response(serializer.errors, status=400)
+
+    def delete(self, request, pk):
+        task = self.get_object(pk)
+
+        if task.user != request.user:
+            return Response({"error": "Not Allowed"}, status=403)
+
+        task.delete()
+        return Response({'message': 'Task deleted successfully.'}, status=204)
