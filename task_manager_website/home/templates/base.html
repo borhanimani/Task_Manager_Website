@@ -1,21 +1,106 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    {% block title %} Home {% endblock %}
+  </title>
+
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <title>{% block title %}Home{% endblock %}</title>
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="{% static 'css_files/base.css' %}">
+
+  <!-- Page specific CSS -->
+  {% block extra_css %}
+  {% endblock %}
+
 </head>
 
+
 <body>
-  {% block content %}
-  {% endblock %}
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand brand-area" href="{% url 'home' %}">
+
+          <img class="brand-icon" src="{% static 'images/favicon1.png' %}">
+          <img src="" alt="">
+
+          <span class="brand-name">
+            Task Manager
+          </span>
+        </a>
+
+        <!-- Mobile button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+          <!-- Center navigation -->
+          <ul class="navbar-nav mx-auto navigation-links">
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="tasks/">
+                Workplace
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                About
+              </a>
+            </li>
+          </ul>
+
+          <!-- Authentication area -->
+          <div class="auth-area" id="authArea">
+
+            <!-- JS replaces this -->
+            <a href="accounts/login" class="btn btn-primary login-btn" id="loginButton">
+              Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
-  {% block script_content %}
+
+  <!-- Authentication JS -->
+  <script src="{% static 'javascript_files/base.js' %}">
+  </script>
+
+  {% block extra_js %}
   {% endblock %}
 </body>
 
