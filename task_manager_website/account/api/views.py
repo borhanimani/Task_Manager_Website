@@ -21,3 +21,17 @@ class LogoutAPIView(APIView):
     def post(self, request):
         logout(request)
         return Response({'message': 'Logout successful'}, status=status.HTTP_200_OK)
+
+
+class CurrentUserAPIView(APIView):
+    def get(self, request):
+        if request.user.is_authenticated:
+            return Response({
+                "authenticated": True,
+                "username": request.user.username,
+                "first_name": request.user.first_name,
+        })
+
+        return Response({
+            "authenticated": False
+        })
