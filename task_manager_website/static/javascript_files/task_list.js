@@ -68,7 +68,7 @@ function renderTasks(tasks) {
             </p>
 
             <div class="task-meta">
-                Created by User ${task.user}
+                Created by: ${task.user}
                 <br>
                 Created:
                 ${new Date(task.created_at)
