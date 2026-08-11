@@ -4,6 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 from .serializer import TaskSerializer
 from ..models import Task
 from django.db.models import Q
+from django.shortcuts import get_object_or_404
 
 class TaskListAPIView(APIView):
     permission_classes = [IsAuthenticated]
@@ -39,7 +40,7 @@ class TaskDetailAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get_object(self, pk):
-        return Task.objects.get(id=pk)
+        return get_object_or_404(Task, id=pk)
 
     def get(self, request, pk):
         task = self.get_object(pk)
