@@ -21,7 +21,6 @@ class TaskListAPIView(APIView):
 
         if request.GET.get('onlyme') == 'true':
             tasks = tasks.filter(user = request.user)
-            print(tasks)
 
         serializer = TaskSerializer(tasks, many=True)
         return Response(serializer.data)
