@@ -21,7 +21,7 @@ async function getCurrentUser() {
 async function loadTasks() {
     loading.classList.remove("d-none");
     taskList.innerHTML = "";
-    let url = "/api/tasks/";
+    let url = "/api/tasks/?";
     const search = searchInput.value.trim();
 
     if (search) {
@@ -29,7 +29,7 @@ async function loadTasks() {
     }
 
     if (myTasks.checked) {
-        url += "?mine=true";
+        url += "mine=true";
     }
 
     const response = await fetch(url);
