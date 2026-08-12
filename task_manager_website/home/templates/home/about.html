@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css_files/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="about-page">
+  <div class="about-container">
+
+    <!-- Text Side -->
+    <div class="about-content">
+
+      <span class="about-tag">
+        About Task Done
+      </span>
+
+      <h1>
+        A simple project
+        <span>for learning</span>
+      </h1>
+
+      <p>
+        This website is designed only for learning purposes.
+        It is not a real production application.
+      </p>
+
+      <p>
+        The goal of this project is to practice modern
+        web development, API communication, user management,
+        and creating clean user interfaces.
+      </p>
+
+      <p class="hope-text">
+        Hope you enjoy exploring it!
+      </p>
+
+      <a href="{% url 'home' %}" class="back-home-btn">
+        <i class="bi bi-house-door"></i>
+        Back to Home
+      </a>
+    </div>
+
+    <!-- Image Side -->
+    <div class="about-image-wrapper">
+      <img src="{% static 'images/workplace.png' %}" class="about-image" alt="About project">
+    </div>
+  </div>
+</section>
+{% endblock %}

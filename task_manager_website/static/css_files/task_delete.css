@@ -1,0 +1,119 @@
+.delete-page {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(135deg,
+            #faf9ff,
+            #f5f7ff);
+}
+
+.delete-container {
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.delete-image {
+    flex: 1;
+}
+
+.delete-image img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.delete-card {
+    flex: 1;
+    background: white;
+    border-radius: 30px;
+    padding: 45px;
+    text-align: center;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .08);
+}
+
+.delete-icon {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fee2e2;
+    color: #dc2626;
+    font-size: 30px;
+}
+
+.delete-card h1 {
+    margin-top: 25px;
+    color: #25215c;
+    font-weight: 800;
+}
+
+.delete-question {
+    color: #667085;
+    margin-top: 15px;
+}
+
+#taskTitle {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    color: #1f2937;
+}
+
+.delete-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.delete-btn {
+    background: #dc2626;
+    color: white;
+    border-radius: 14px;
+    padding: 12px 25px;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+    color: white;
+}
+
+.cancel-btn {
+    background: #eef2ff;
+    color: #4f46e5;
+    border-radius: 14px;
+    padding: 12px 25px;
+}
+
+.cancel-btn:hover {
+    background: #e0e7ff;
+}
+
+.success-message {
+    color: #16a34a;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: #dc2626;
+    margin-top: 20px;
+}
+
+
+@media(max-width:991px) {
+
+    .delete-container {
+        flex-direction: column;
+    }
+
+    .delete-image img {
+        max-width: 350px;
+    }
+}
