@@ -45,9 +45,10 @@ The website security is:
 - pages need to connect to the back-end safe and secure.   
 
 ### Technically
-The application need: 
+The application: 
 - faster response
 - using APIs to connecting to different devices
 - maintainable
 - secure
-- scailable   
+- scailable
+- limit in server deployment   
