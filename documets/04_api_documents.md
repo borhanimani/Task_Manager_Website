@@ -21,4 +21,7 @@ the REST APIs are seperated APIs too which designed for:
 #### Part2:    
 - getting a task details   
 - editing a task and its status   
-- deleting a task   
+- deleting a task
+#### Part3: 
+- users and acounts which are their own Django and Djanog REST framework APIs
+- admin which has its own API 
