@@ -3,19 +3,19 @@
 ## Setup Instructions: 
   1. Clone the project:
        https://github.com/borhanimani/Task_Manger_Website.git
-       *you can download the project zip and extract it*
+     *you can download the project zip and extract it*
 
   2. Open the project file or go to the project file with the command:
        cd Task_Manager_Website
 
-  4. Setting up the Virtual Environment:
+  3. Setting up the Virtual Environment:
        #### Windows:
        python -m venv myenv
 
        #### macOS / Linux:
        python3 -m venv myenv
 
-  5. Activating the Virtual Environment
+  4. Activating the Virtual Environment
        #### Windows:
        myenv\Scripts\activate
 
@@ -26,9 +26,18 @@
   6. Installing Required Packeges:
        pip install -r requirements.txt 
 
-  7. Run the project:
+  7. Make Database:
+       cd task_manager_website
+       python manage.py makemigrations
+       python manage.py magrate
+
+  8. Create Admin:
+       python manage.py createsuperuser
+
+  9. Run the project:
        cd task_manager_website
        python manage.py runserver
+       *after that you can go to the admin site with: domain/admin and making an user and then use the webapp.*
 
 ## About the project
 Task Done is a simple task management web application built for learning purposes.
@@ -40,14 +49,3 @@ Users can also search for tasks, filter their own tasks, and mark tasks as compl
   Also the project deployed in **pythonanywhere Website**
 
 > **Note:** This project was created for learning and educational purposes. It is not intended to be a production application.
-
-
-
-
-
-
-
-
-
-
-  
