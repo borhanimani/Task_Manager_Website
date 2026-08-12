@@ -27,7 +27,7 @@ The UI/UX need to be:
 - responsive design    
 
 ### Pages
-the pages are
+the pages are:
 - home (the main page)
 - workplace (for seeing and managing tasks)
 - about (explaining about the website)
