@@ -13,6 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskId = window.location.pathname.split("/")[3];
     const statusBox = document.getElementById("status-box");
 
+    let currentUser = '';
+    let taskUser = '';
+
+    async function getUser() {
+        const response = await fetch("/api/accounts/user/");
+
+        if (response.ok) {
+            currentUser = await response.json();
+        }
+    }
+
     // Load task data
     async function loadTask() {
         const response = await fetch(`/api/tasks/${taskId}/`);
@@ -23,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const task = await response.json();
+        taskUser = task;
         titleInput.value = task.title;
         descriptionInput.value = task.description;
         characterCount.textContent = `${task.description.length} / 400`;
@@ -30,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     loadTask();
+    getUser();
 
     // CHARACTER COUNT
     descriptionInput.addEventListener("input", () => {
@@ -39,6 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Delete
     deleteButton.addEventListener("click", () => {
+        // ownership check
+        if (taskUser.created_by.username !== currentUser.username) {
+            showMessage(
+                "No Permission. You can only delete your tasks.",
+                "error"
+            );
+            return;
+        }
         window.location.href = `/tasks/delete/${taskId}/`;
     });
 
@@ -50,6 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Edit button 
     editButton.addEventListener("click", function (e) {
         e.preventDefault();
+        // ownership check
+        if (taskUser.created_by.username !== currentUser.username) {
+            showMessage(
+                "No Permission. You can only edit your tasks.",
+                "error"
+            );
+            return;
+        }
         window.location.href = `/tasks/edit/${taskId}/`;
     });
 

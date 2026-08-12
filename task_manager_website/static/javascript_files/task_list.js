@@ -6,6 +6,14 @@ const empty = document.getElementById("emptyState");
 
 let currentUser = null;
 
+async function getUser() {
+    const response = await fetch("/api/accounts/user/");
+
+    if (response.ok) {
+        currentUser = await response.json();
+    }
+}
+
 // Get logged in user
 async function getCurrentUser() {
     const response = await fetch(
@@ -121,6 +129,7 @@ function renderTasks(tasks) {
         const editButton = card.querySelector(".edit-btn");
 
         if (editButton) {
+
             editButton.addEventListener("click", function (e) {
                 e.stopPropagation();
                 window.location.href = `/tasks/edit/${task.id}/`;
