@@ -6,8 +6,7 @@
        *you can download the project zip and extract it*
   
   3. Open the project file or go to the project file with the command:  
-       ```cd Task_Manager_Website
-       ```
+       ```cd Task_Manager_Website```
   
   5. Setting up the Virtual Environment:  
        #### Windows:  
@@ -29,9 +28,9 @@
        ```pip install -r requirements.txt```   
 
   9. Make Database:  
-       ```cd task_manager_website```
-       ```python manage.py makemigrations```
-       ```python manage.py magrate```
+       ```cd task_manager_website```  
+       ```python manage.py makemigrations```  
+       ```python manage.py magrate```  
 
   10. Create Admin:    
        ```python manage.py createsuperuser```
