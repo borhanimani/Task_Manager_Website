@@ -44,7 +44,7 @@ The website security is:
 - only users who created the tasks can edit or delete it.
 - pages need to connect to the back-end safe and secure.   
 
-### Technically
+### Technical
 The application: 
 - faster response
 - using APIs to connecting to different devices
