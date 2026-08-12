@@ -8,14 +8,14 @@
   2. Open the project file or go to the project file with the command:
        cd Task_Manager_Website
 
-  3. Setting up the Virtual Environment:
+  4. Setting up the Virtual Environment:
        #### Windows:
        python -m venv myenv
 
        #### macOS / Linux:
        python3 -m venv myenv
 
-  4. Activating the Virtual Environment
+  5. Activating the Virtual Environment
        #### Windows:
        myenv\Scripts\activate
 
