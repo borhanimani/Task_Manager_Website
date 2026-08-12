@@ -6,50 +6,28 @@ software engineering parameters, UI/UX parameter, some user experience parameter
 after revieving AI generated code, controlling the code and making more compatible with the projects codes tried. the prompt used such as:
 
 #### Introduction Prompt
-> I need you to be as an software enginner, web developer and UI UX designer
-> and make some modern website webpages codes which I'll tell you later, I will
-> explain each page for you and you give me code and then I will go to the next
-> page. you need to design its UI UX too and I will give you some points that
-> that is my idea for it. the project is for Django and you need to design codes
-> only with HTML, Bootstrap and maybe some CSS. Also I need to all pages use
-> semantic HTML standards, in some cases I need JavaScript too because the Project
-> architecture is I need to send and render the pages with Django but the pages
-> must use APIs to getting data. I also want to all pages be responsive for
-> desktop, tablet, and mobile. the website concept is about task managing.
+> I need you to be as an software enginner, web developer and UI UX designer and make some modern website webpages codes which I'll tell you later, I will explain each page for you and you give me code and then > I will go to the next page. you need to design its UI UX too and I will give you some points that that is my idea for it. the project is for Django and you need to design codes only with HTML, Bootstrap and > maybe some CSS. Also I need to all pages use semantic HTML standards, in some cases I need JavaScript too because the Project architecture is I need to send and render the pages with Django but the pages must > use APIs to getting data.  I also want to all pages be responsive for desktop, tablet, and mobile. the website concept is about task managing.
 
 #### Base File Prompt
-> I need a base HTML file for linking Bootstrap, setting the page title,
-> and including its personal CSS file. However, each page has its own CSS files,
-> so this file needs to allow other CSS files to be implemented as well.
-> This page has a navbar for all pages, which should be designed here.
-> The text links need to stay in the center, the brand icon should be on the left,
-> and there should be only one login button on the right side.
-> After the user logs in, the login button should be replaced with a circle.
-> Inside the circle, it should display the first letter of the username.
-> When I click on the circle, it should show a Logout option, and by clicking on it,
-> the user should be logged out.
-> For responsive design, the navigation links should adapt properly on different
-> screen sizes, and the user profile circle should remain on the right side of the
-> page while becoming smaller on smaller screens. Use proper UI/UX standards
-> for the responsive behavior.
-> I also need to use an API for login authentication and JavaScript to handle
-> checking the user session in a secure way. Please implement it using the best
-> practices and a proper software engineering approach.
+> base page:
+> I need a base html file for linking bootstrap, page title, also its personal css file, but each page has its own css files so this file needs to allow other css files to implement their own files. this page > has a navbar for all pages that designs in here, the text links needs to stay in center, brand icon in left and only one login button in the right, after the user logged in, a circle needs to show instead of > login button and inside of the circle has the first letter of the username.and when I click on the circle it needs to show Logout and by clicking on it, it logges out. also in making responsive, the links titles > should get responsive and the circle needs to still be on the right side of the page but it can be smaller (use the UI UX standards for them). also I need to use API to login and make the javascript to check > the user with that in a secure way so do what is best and good and engineering way.
 
 #### Home Page Prompt
 > ok now lets go for designing home page:
 > use the base html file for navbar and its other features. in this page I need a modern home page with a beautiful and modren style. I need only landing page in this page with a button wich has written "Go To > Workplace" and some text at the left of the button which has a message like do you tasks comfortable(you can make it like a hook massage or something that user feels friendly with website and relax). also I have > picture that iI send you now to use it for landing page. use the standards of UI UX to make the text and button better view. I mean standards that picture at the backside which button and text is on it. also > the colore you use need to compatible with the picture and some like the user feel comfortable and relaxed.
 
-
 #### Login Page Prompt
 > great, lets go for next page. now, I need a modern login page. use the color that is compatible with home page and its picture but don't use its picture. the login page has user and password inputs without any > forgot your password and other features. the username and password and login process most be safe and secure, using crf and other security features. using form submit or other design is up to you, use the best > way and also more secure way. remember the login process should be with api.
 
 #### Tasks List (Workplace) Page Prompt
-> ok great, now I need a task list page, use the same design as other pages, make a modern list task page. in this page we have search input and also a "my tasks" check box which the user check that button, the > page must should show the tasks that the user have created, otherwise, it must show all tasks. each task card should show title, description (you just need to show only one or two line and after that use > something like shadow or anything that shows the text has more and then user can click on the card and it locates to another page to shows whole task completely), which user created this and when created, or > updated (if created_by with updated_by was not equal it needs to write updated in UI and shows the date), and status which status is checkbox too, it is a boolean which if it was false, it should write not done > and if it true, it needs to write "Done!" and also its card should get whiter or transparent, some thing like the card is done so it needs to be different of other card which are not done (remember when the > task Done you do not need to lock the checkbox, maybe user want to uncheck again so the card needs go get back like its past). also in each card it needs edit and delete button and use icon buttons like you know > want to use as standard UI UX icons for this. also this icons (delete and edit) must enables only for users which have created that task. also when its icon buttons are disabled, it should has it space, you > know the layout must not changes with the enabling and disabling icon buttons. but for the entire page we show use create a task in the top right of the tasks cards box which click on it it should go the another > page, also same for edit and delete they are go for their pages after clicking on it, if you think it can be better, I will send a picture for you to use on the right side of left side of the boxes. also >remember the lists must get by API in JSON. search input and my tasks filter need to use API, and getting the data Json too.
+> ok great, now I need a task list page, use the same design as other pages, make a modern list task page. in this page we have search input and also a "my tasks" check box which the user check that button, the > page must should show the tasks that the user have created, otherwise, it must show all tasks. each task card should show title, description (you just need to show only one or two line and after that use > something like shadow or anything that shows the text has more and then user can click on the card and it locates to another page to shows whole task completely), which user created this and when created, or > updated (if created_by with updated_by was not equal it needs to write updated in UI and shows the date), and status which status is checkbox too, it is a boolean which if it was false, it should write not done > and if it true, it needs to write "Done!" and also its card should get whiter or transparent, some thing like the card is done so it needs to be different of other card which are not done (remember when the > task Done you do not need to lock the checkbox, maybe user want to uncheck again so the card needs go get back like its past). also in each card it needs edit and delete button and use icon buttons like you know > want to use as standard UI UX icons for this. also this icons (delete and edit) must enables only for users which have created that task. also when its icon buttons are disabled, it should has it space, you > know the layout must not changes with the enabling and disabling icon buttons. but for the entire page we show use create a task in the top right of the tasks cards box which click on it it should go the another > page, also same for edit and delete they are go for their pages after clicking on it, if you think it can be better, I will send a picture for you to use on the right side of left side of the boxes. also > remember the lists must get by API in JSON. search input and my tasks filter need to use API, and getting the data Json too. 
 
+#### Add Page Prompt
+***Note:** This prompt used for add page but, the code changed and used for edit and view details pages.*
+> ok, now its time to make an add page, use the design of other created pages, I need this page to have title as input, description as textbox and status as checkbox and add and cancel button which these two > button must have "Add" and "Cancel" buttton with icons too. it needs to send the data with APIs safe and secure, the status also should use as a boolean and if I click on cancel, it needs to return to the > workspace page. I will send a picture to you. so you this carefuly and use it as a modern UI UX design for this part.
 
+#### Delete Page Prompt
+> ok, now I need a delete page for deleting task, use the modern design you used for the pages you created. in this page, I need you to ask the user, are you sure you want to delete task? and the only show the > title of the task and two button delete task button and cancel, I will send you a picture so use that picture in this page too. and the page should get the data from the API and uses only its title and then uses > API to delete the task. also, only the user which logged and he is the creator of that page can delete the task (for example user A can delete hes tasks not the tasks of user B) if someone wanted to do that, > don't allow it and show a message that he cannot do that. after deleting successfully which needs to stay for response from server, show a message task deleted and then get back to workplace page.
 
-
-
-
-
+#### About Page Promt
+> now its time to make about page, use the same design as the other designs, in the about page I want to write this site is designed for leanrning so this is not real. hope you enjoy! it dont need any js file, > just some thing that clicking on it to get back to the home page. use this picture too. design it modern way.
