@@ -20,4 +20,4 @@ so the developer is not controlling the database direcly. **"er_diagram.png"** f
 database diagram and relationship with users and tasks.
 
 ### Frontend   
-The frontend part connects with APIs   
+The frontend part connects with APIs (page APIs for getting page files, and REST APIs to make connection with backend and database).
