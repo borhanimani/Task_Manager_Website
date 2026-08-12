@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Add Task
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css_files/task_create.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="task-create-page">
+  <div class="container">
+    <section class="task-create-wrapper" aria-labelledby="createTaskTitle">
+      <!-- FORM SIDE -->
+      <div class="task-form-section">
+        <div class="task-form-header">
+
+          <span class="section-label">
+            Productivity
+          </span>
+
+          <h1 id="createTaskTitle">
+            Create a new task
+          </h1>
+
+          <p>
+            Add something important to your list
+            and keep your day organized.
+          </p>
+
+        </div>
+
+        <!-- API error / success messages -->
+        <div id="formMessage" class="form-message d-none" role="alert" aria-live="polite"></div>
+
+        <form id="taskForm" novalidate>
+
+          <!-- Title -->
+          <div class="form-field">
+            <label for="taskTitle" class="form-label">
+              Task title
+            </label>
+
+            <div class="input-wrapper">
+              <i class="bi bi-pencil-square input-icon" aria-hidden="true"></i>
+              <input type="text" id="taskTitle" name="title" class="form-control task-input"
+                placeholder="What needs to be done?" maxlength="200" autocomplete="off" required aria-required="true">
+            </div>
+
+            <div class="field-error" id="titleError" role="alert"></div>
+
+          </div>
+
+          <!-- Description -->
+          <div class="form-field">
+            <label for="taskDescription" class="form-label">
+              Description
+            </label>
+
+            <div class="textarea-wrapper">
+              <i class="bi bi-card-text textarea-icon" aria-hidden="true"></i>
+              <textarea id="taskDescription" name="description" class="form-control task-textarea"
+                placeholder="Describe what you need to accomplish..." rows="6" maxlength="2000" required
+                aria-required="true"></textarea>
+            </div>
+
+            <div class="field-bottom">
+              <div class="field-error" id="descriptionError" role="alert"></div>
+              <span class="character-count" id="characterCount">
+                0 / 400
+              </span>
+
+            </div>
+          </div>
+
+          <!-- Status -->
+          <div class="status-box">
+            <div class="status-content">
+              <div class="status-icon">
+                <i class="bi bi-check-lg" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <label for="taskStatus" class="status-title">
+                  Mark as completed
+                </label>
+
+                <p class="status-description">
+                  You can change this later from your tasks.
+                </p>
+              </div>
+            </div>
+
+            <div class="form-check form-switch status-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="taskStatus" name="status">
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="form-actions">
+            <button type="button" class="btn cancel-task-btn" id="cancelTaskButton">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-x-lg"
+                viewBox="0 0 16 16">
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+              </svg>
+              <span>
+                Cancel
+              </span>
+            </button>
+
+            <button type="submit" class="btn add-task-btn" id="addTaskButton">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
+                id="addIcon" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+              </svg>
+
+              <div class="spinner-border text-light spinner-border-sm" role="status" id="load-spinner"
+                style="display: none;">
+                <span class="visually-hidden ">Loading...</span>
+              </div>
+
+              <span id="addButtonText">
+                Add Task
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- VISUAL SIDE -->
+      <aside class="task-visual-section" aria-label="Task organization illustration">
+        <div class="visual-content">
+
+          <div class="visual-badge">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            Stay organized
+          </div>
+
+          <h2>
+            One task at a time.
+          </h2>
+
+          <p>
+            Capture your ideas, organize your priorities,
+            and get things done without the stress.
+          </p>
+        </div>
+
+        <div class="visual-image-wrapper">
+          <img src="{% static 'images/add_edit_task.png' %}" alt="Illustration of productivity, tasks and organization"
+            class="task-visual-image">
+        </div>
+      </aside>
+    </section>
+  </div>
+</main>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'javascript_files/task_create.js' %}"></script>
+{% endblock %}

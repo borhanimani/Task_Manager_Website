@@ -53,8 +53,7 @@ function renderTasks(tasks) {
         card.className = `task-card ${task.status ? "done" : ""}`;
 
         card.onclick = () => {
-            window.location.href =
-                `/tasks/${task.id}/`;
+            window.location.href = `/tasks/detail/${task.id}/`;
         };
 
         card.innerHTML = `
@@ -108,7 +107,6 @@ function renderTasks(tasks) {
                             <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" /></svg>
                     </button>`: ""}
 
-
                 ${canEdit ? `
                     <button
                         class="icon-btn delete-btn" ${canEdit ? "" : "disabled"} title="Delete task">
@@ -120,12 +118,26 @@ function renderTasks(tasks) {
 
         taskList.appendChild(card);
 
-        /*
-            STATUS CHANGE
-        */
+        const editButton = card.querySelector(".edit-btn");
+
+        if (editButton) {
+            editButton.addEventListener("click", function (e) {
+                e.stopPropagation();
+                window.location.href = `/tasks/edit/${task.id}/`;
+            }
+            );
+        }
+
+        const deleteButton = card.querySelector(".delete-btn");
+        if (deleteButton) {
+            deleteButton.addEventListener("click", async function (e) {
+                e.stopPropagation();
+                window.location.href = `/tasks/delete/${task.id}/`;
+            });
+        }
+
+        // STATUS CHANGE
         const checkbox = card.querySelector(".status-checkbox");
-
-
         const statusText = card.querySelector(".status-text");
         checkbox.addEventListener(
             "click",
@@ -139,37 +151,39 @@ function renderTasks(tasks) {
             async function () {
 
                 const newStatus = checkbox.checked;
-                await updateTaskStatus(
+                const success = await updateTaskStatus(
                     task.id,
                     newStatus
                 );
 
-                task.status =
-                    newStatus;
-                // Change card style
-                card.classList.toggle(
-                    "done",
-                    newStatus
-                );
-                // Change text
+                if (success) {
+                    task.status = newStatus
 
-                statusText.textContent =
-                    newStatus
-                        ?
-                        "Done!"
-                        :
-                        "Not Done";
+                    // Change card style
+                    card.classList.toggle(
+                        "done",
+                        newStatus
+                    );
+
+                    // Change text
+                    statusText.textContent =
+                        newStatus
+                            ?
+                            "Done!"
+                            :
+                            "Not Done";
+                } else {
+                    checkbox.checked = !newStatus
+                }
             }
         );
     });
 }
 
 // Update status API
-async function updateTaskStatus(
-    id,
-    status
-) {
-    await fetch(`/api/tasks/${id}/`, {
+async function updateTaskStatus(id, status) {
+
+    const response = await fetch(`/api/tasks/${id}/`, {
 
         method: "PATCH",
         headers: {
@@ -183,6 +197,13 @@ async function updateTaskStatus(
             })
     }
     );
+
+    if (response.ok) {
+        return true;
+    }
+
+    alert("ERROR: You cannot edit this task! Just edit your tasks.")
+    return false;
 }
 
 // Search debounce
