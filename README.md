@@ -2,7 +2,7 @@
 
 ## Setup Instructions: 
   1. Clone the project:
-       https://github.com/borhanimani/Task_Manger_Website.git  
+       https://github.com/borhanimani/Task_Manager_Website.git
        *you can download the project zip and extract it*
   
   3. Open the project file or go to the project file with the command:  
