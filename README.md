@@ -45,9 +45,9 @@ Task Done is a simple task management web application built for learning purpose
 
 The application allows users to create, view, update, and delete their own tasks. 
 Users can also search for tasks, filter their own tasks, and mark tasks as completed.
+> **Note:** You can we more imformation about the project and its documents in the "documents" folder.
 #### Technology used is this project:
   **Python/Django**, **Django REST Framework**, **HTML5**, **CSS3**, **JavaScript**, **Bootstrap 5 & Bootstrap Icons**, **SQLite**.
   Also the project deployed in **pythonanywhere Website**
 
 > **Note:** This project was created for learning and educational purposes. It is not intended to be a production application.  
-> **Note:** You can we more imformation about the project and its documents in the "documents" folder.
