@@ -11,11 +11,13 @@ or other devices apps, so we need to design desktop pages for rendering with bac
 for other devices (it has less costs. It needs less design and less server space and less server counts) and REST API to make the app connects to    
 different devices. So decision is desiging **pages' APIs** which calls the pages and render them, and **REST APIs** which the rendered pages and     
 other devices can use them and make connection with backend and database securely. This architecture helps to build a full website with frontend side    
-and workable in less cost and limited requires, and a separated REST APIs to use with any devidce or frontend sides.    
+and workable in less cost and limited requires, and a separated REST APIs to use with any devidce or frontend sides. **"architecture_design.png"** file   
+in **assets** folder explains about the architecture design.
 
 ### Backend / Database    
-The backend and database are connected together using **SQLite3** which the backend is managing the backend using **ORM**.   
-so the developer is not controlling the database direcly.   
+The backend and database are connected together using **SQLite** which the backend is managing the backend using **ORM**.   
+so the developer is not controlling the database direcly. **"er_diagram.png"** file in **assets** folder explains about the
+database diagram and relationship with users and tasks.
 
 ### Frontend   
 The frontend part connects with APIs   
