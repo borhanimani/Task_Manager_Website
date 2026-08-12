@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Workspace
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css_files/task_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="tasks-page">
+  <section class="tasks-container container">
+
+    <!-- Header -->
+    <header class="tasks-header">
+      <div>
+
+        <span class="tasks-label">
+          Productivity
+        </span>
+
+        <h1>
+          My Tasks
+        </h1>
+
+        <p>
+          Manage your daily tasks and keep your focus.
+        </p>
+      </div>
+
+      <a href="{% url 'task_create' %}" class="create-task-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14"></path>
+          <path d="M5 12h14"></path>
+        </svg>
+        Create Task
+      </a>
+    </header>
+
+    <!-- Filters -->
+    <section class="task-filter">
+      <div class="search-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+
+        <input id="taskSearch" type="search" placeholder="Search tasks...">
+      </div>
+
+      <label class="my-task-checkbox">
+        <input type="checkbox" id="myTasks">
+        <span></span>
+        My Tasks only
+      </label>
+    </section>
+
+    <!-- Loading -->
+    <div id="loadingState" class="loading-state">
+      Loading tasks...
+    </div>
+
+    <!-- Empty -->
+    <div id="emptyState" class="empty-state d-none">
+      No tasks found.
+    </div>
+
+    <!-- Cards -->
+    <section id="taskList" class="task-grid" aria-live="polite"></section>
+  </section>
+</main>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script src="{% static 'javascript_files/task_list.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Task Done
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css_files/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="home-page">
+  <section class="hero-section">
+    <div class="container">
+      <div class="row">
+
+        <!-- Left Content -->
+        <div class="col-lg-6 hero-content">
+          <h1>
+            Make your tasks
+            <br>
+            <span>
+              simple and stress-free
+            </span>
+          </h1>
+
+          <p>
+            Plan your day, organize your goals,
+            and complete your tasks comfortably.
+            Task Done helps you stay focused
+            without feeling overwhelmed.
+          </p>
+
+          <div class="hero-actions">
+            <a href="{% url 'task_list' %}" class="btn hero-button">
+              Go To Workplace
+            </a>
+          </div>
+
+          <div class="small-message">
+            ✓ Stay organized
+            &nbsp; • &nbsp;
+            ✓ Save your time
+            &nbsp; • &nbsp;
+            ✓ Work peacefully
+          </div>
+        </div>
+
+        <!-- Right Image -->
+        <div class="col-lg-6">
+          <div class="hero-image-wrapper">
+            <img src="{% static 'images/landing_page.png' %}" alt="Task management illustration" class="hero-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

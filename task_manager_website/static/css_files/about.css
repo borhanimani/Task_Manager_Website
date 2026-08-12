@@ -1,0 +1,135 @@
+.about-page {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at top left,
+            rgba(140, 120, 255, .18),
+            transparent 35%),
+
+        linear-gradient(135deg,
+            #faf9ff,
+            #f5f7ff);
+
+    padding: 60px 0;
+}
+
+.about-container {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-tag {
+    color: #635bff;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.about-content h1 {
+    margin-top: 20px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
+    font-weight: 800;
+    color: #25215c;
+}
+
+.about-content h1 span {
+    display: block;
+    background:
+        linear-gradient(90deg,
+            #635bff,
+            #9b7cff);
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.about-content p {
+    margin-top: 25px;
+    max-width: 520px;
+    color: #667085;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.hope-text {
+    font-weight: 600;
+    color: #4f46e5 !important;
+}
+
+.back-home-btn {
+    margin-top: 35px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    border-radius: 16px;
+    background:
+        linear-gradient(135deg,
+            #665cf6,
+            #8f7cff);
+
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 15px 30px rgba(102, 92, 246, .3);
+    transition: .3s;
+}
+
+.back-home-btn:hover {
+    transform: translateY(-4px);
+    color: white;
+    box-shadow: 0 20px 40px rgba(102, 92, 246, .4);
+}
+
+.about-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image {
+    width: 80%;
+    max-width: 600px;
+    max-height: 100vh;
+    border-radius: 30px;
+    animation: floating 6s ease-in-out infinite;
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@media(max-width:991px) {
+
+    .about-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-image {
+        max-width: 450px;
+    }
+}
