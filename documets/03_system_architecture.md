@@ -17,9 +17,9 @@ or frontend sides. **"architecture_design.png"** file in **assets** folder expla
 ### Backend / Database    
 The backend and database are connected together using **SQLite** which the backend is managing the backend using **ORM**.   
 so the developer is not controlling the database direcly. **"er_diagram.png"** file in **assets** folder explains about the
-database diagram and relationship with users and tasks. for better design, maintenance and scaleability, Class-based View (CBV)  
-used in this project. also for better maintenance and cleaner code, the url routes most reffered to each app. This helps to use  
-apps on other project easier which can mean reuseability.
+database diagram and relationship with users and tasks. for better design, maintenance and scaleability, **Class-based View (CBV)** used in this  
+project. also for better maintenance and cleaner code, the url routes most reffered to each app. This helps to use apps on other project  
+easier which can mean reuseability.
 
 ### Frontend   
 The frontend part connects with APIs (page APIs for getting page files, and REST APIs to make connection with backend and database).  
