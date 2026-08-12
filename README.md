@@ -3,40 +3,41 @@
 ## Setup Instructions: 
   1. Clone the project:
        https://github.com/borhanimani/Task_Manger_Website.git
-     *you can download the project zip and extract it*
+       *you can download the project zip and extract it*
+  
+  3. Open the project file or go to the project file with the command:  
+       ```cd Task_Manager_Website
+  
+  5. Setting up the Virtual Environment:  
+       #### Windows:  
+       ```python -m venv myenv  
+       
+       #### macOS / Linux:  
+       ```python3 -m venv myenv  
 
-  2. Open the project file or go to the project file with the command:
-       cd Task_Manager_Website
-
-  3. Setting up the Virtual Environment:
+    
+  6. Activating the Virtual Environment
        #### Windows:
-       python -m venv myenv
+       ```myenv\Scripts\activate
 
        #### macOS / Linux:
-       python3 -m venv myenv
-
-  4. Activating the Virtual Environment
-       #### Windows:
-       myenv\Scripts\activate
-
-       #### macOS / Linux:
-       source myenv/bin/activate
+       ```source myenv/bin/activate  
        *after activating you will see something similar to: (myenv)*
 
-  6. Installing Required Packeges:
-       pip install -r requirements.txt 
+  7. Installing Required Packeges:  
+       ```pip install -r requirements.txt 
 
-  7. Make Database:
-       cd task_manager_website
-       python manage.py makemigrations
-       python manage.py magrate
+  8. Make Database:  
+       ```cd task_manager_website
+       ```python manage.py makemigrations
+       ```python manage.py magrate
 
-  8. Create Admin:
-       python manage.py createsuperuser
+  9. Create Admin:  
+       ```python manage.py createsuperuser
 
-  9. Run the project:
-       cd task_manager_website
-       python manage.py runserver
+  10. Run the project:  
+       ```cd task_manager_website
+       ```python manage.py runserver
        *after that you can go to the admin site with: domain/admin and making an user and then use the webapp.*
 
 ## About the project
