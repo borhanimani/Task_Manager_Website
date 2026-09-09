@@ -30,7 +30,7 @@
   9. Make Database:  
        ```cd task_manager_website```  
        ```python manage.py makemigrations```  
-       ```python manage.py magrate```  
+       ```python manage.py migrate```  
 
   10. Create Admin:    
        ```python manage.py createsuperuser```
